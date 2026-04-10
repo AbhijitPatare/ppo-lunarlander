@@ -1,0 +1,24 @@
+# Core deep learning
+torch==2.6.0                  # PyTorch — neural networks, tensors, autograd
+torchvision==0.21.0           # not strictly needed but good to have
+
+# RL environment
+gymnasium==1.2.3              # the environment library (successor to OpenAI gym)
+gymnasium[box2d]==1.2.3       # LunarLander uses Box2D physics — this installs it
+swig==4.2.1                    # box2d needs this C wrapper to build
+
+# Math and data
+numpy==2.4.4                  # arrays, math operations
+
+# Experiment tracking
+wandb==0.25.1                 # Weights & Biases — logs every run automatically
+
+# Config reading
+pyyaml==6.0.1                  # reads our .yaml config files into Python dicts
+
+# Testing
+pytest==8.2.0                  # runs our test files automatically
+
+# Visualization (for notebooks)
+matplotlib                    # plotting training curves
+jupyter                        # for the explore.ipynb notebook
