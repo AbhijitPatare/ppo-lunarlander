@@ -1,0 +1,54 @@
+# Enviroment  
+
+env:
+  name: LunarLander-v2
+  seed: 42
+  max_steps: 500
+  
+
+# Model Architecture
+
+model:
+  hidden_dim: 256
+  num_layers: 2
+  activation: tanh
+
+# PPO Algorythm
+
+ppo:
+  clip_eps:       0.2         # clip ratio — how far policy can move
+  gamma:          0.99        # discount factor — future reward weight
+  gae_lambda:     0.95        # GAE lambda — bias/variance tradeoff
+  ppo_epochs:     10          # update passes per rollout
+  batch_size:     64          # minibatch size during update
+  rollout_steps:  2048        # steps collected before each update
+  vf_coef:        0.5         # value loss weight in combined loss
+  ent_coef:       0.01        # entropy bonus weight
+  max_grad_norm:  0.5         # gradient clipping threshold
+
+# Optimizer
+
+optimizer:
+  name:           adam        # optimizer type
+  lr:             3e-4        # learning rate (0.0003)
+  eps:            1e-5        # Adam epsilon — numerical stability
+
+# ── Training schedule ─────────────────────────────────────────
+training:
+  total_steps:    1000000     # total env steps (1 million)
+  eval_interval:  10          # evaluate every N episodes
+  save_interval:  50          # save checkpoint every N episodes
+  log_interval:   1           # log to W&B every N episodes
+  solved_reward:  200         # stop early if avg reward hits this
+
+# ── Paths ─────────────────────────────────────────────────────
+paths:
+  checkpoint_dir: "checkpoints"
+  best_model:     "checkpoints/best_model.pt"
+  log_dir:        "logs"
+
+# ── Weights & Biases ──────────────────────────────────────────
+wandb:
+  project:  ppo-lunarlander   # project name on wandb.ai
+  entity:   null              # your wandb username (null = auto)
+  enabled:  true              # set false to disable logging 

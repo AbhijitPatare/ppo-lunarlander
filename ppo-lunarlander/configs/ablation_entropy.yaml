@@ -1,0 +1,5 @@
+# Test: no entropy bonus
+# Question: does exploration collapse without it?
+
+ppo:
+  ent_coef: 0.0

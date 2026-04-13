@@ -1,0 +1,5 @@
+# Test: no gradient clipping
+# Question: how bad does training get without it?
+
+ppo:
+  max_grad_norm: 999

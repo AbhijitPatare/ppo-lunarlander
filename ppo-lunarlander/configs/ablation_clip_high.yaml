@@ -1,0 +1,5 @@
+# Test: larger clip range
+# Question: does 0.3 learn faster but less stable?
+
+ppo:
+  clip_eps: 0.3

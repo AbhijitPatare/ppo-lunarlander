@@ -1,0 +1,5 @@
+# Test: lower GAE lambda
+# Question: more bias but less variance?
+
+ppo:
+  gae_lambda: 0.9

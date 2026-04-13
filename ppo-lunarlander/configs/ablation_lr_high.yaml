@@ -1,0 +1,5 @@
+# Test: 10x higher learning rate
+# Question: faster but does it diverge?
+
+optimizer:
+  lr: 3e-3

@@ -1,0 +1,5 @@
+# Test: smaller clip range
+# Question: does 0.1 make training more stable?
+
+ppo:
+  clip_eps: 0.1
